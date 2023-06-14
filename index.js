@@ -26,7 +26,7 @@ try {
     await connection
     console.log("Connected to Db");
 } catch (error) {
-    console.log({"MSG":error.message})
+    console.log({"Erros":error.message})
 }
 console.log(`Server is runing on ${process.env.PORT}`)
 })
