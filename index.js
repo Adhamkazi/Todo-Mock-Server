@@ -4,6 +4,7 @@ const { getRouter } = require('./Routes/Get.Route');
 const { postRouter } = require('./Routes/Post.Route');
 const { deleteRouter } = require('./Routes/Delete.Route');
 const { updateRouter } = require('./Routes/Update.Route');
+const cors = require("cors")
 require('dotenv').config()
 const app = express();
 
