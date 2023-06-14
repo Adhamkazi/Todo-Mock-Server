@@ -1,0 +1,28 @@
+const express = require('express');
+const { connection } = require('./db');
+const { getRouter } = require('./Routes/Get.Route');
+const { postRouter } = require('./Routes/Post.Route');
+const { deleteRouter } = require('./Routes/Delete.Route');
+const { updateRouter } = require('./Routes/Update.Route');
+require('dotenv').config()
+const app = express();
+
+app.use(express.json());
+ app.get("/",(req,res)=>{
+    res.send("Todos")
+ })
+app.use("/todo",getRouter);
+app.use("/todo",postRouter);
+app.use("/todo",deleteRouter)
+app.use("/todo",updateRouter)
+
+
+app.listen(process.env.PORT,async()=>{
+try {
+    await connection
+    console.log("Connected to Db");
+} catch (error) {
+    console.log({"MSG":error.message})
+}
+console.log(`Server is runing on ${process.env.PORT}`)
+})
