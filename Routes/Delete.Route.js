@@ -7,9 +7,9 @@ deleteRouter.delete('/delete/:id',async(req,res)=>{
     const ID = req.params.id;
     try {
         await TodoModel.findByIdAndDelete({_id:ID});
-        res.send({ "msg": `User has been Deleted with ${ID} ` })
+        res.send({ "msg": `Todo has been Deleted with ${ID} ` })
     } catch (error) {
-        res.send({ "msg": "cannot delete user data", "error": error.message })   
+        res.send({ "msg": "cannot delete Todo data", "error": error.message })   
     }
 })
 

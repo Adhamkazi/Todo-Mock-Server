@@ -10,7 +10,7 @@ try {
     await todo.save();
     res.send("Todo has been Added successfully")
 } catch (error) {
-    res.send({ "msg": "unable to add data", "error": error.message })
+    res.send({ "msg": "unable to add Todo", "error": error.message })
 }
 })
 

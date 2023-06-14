@@ -9,9 +9,9 @@ updateRouter.patch("/update/:id",async(req,res)=>{
     const payload =req.body;
     try {
         await TodoModel.findByIdAndUpdate({_id:ID}, payload)
-        res.send({ "msg": `User has been updated with id : ${ID} ` })
+        res.send({ "msg": `Todo has been updated with id : ${ID} ` })
     } catch (error) {
-        res.send({ "msg": "cannot update user data", "error": error.message })
+        res.send({ "msg": "cannot update Todo data", "error": error.message })
     }
 })
 

@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const { connection } = require('./db');
 const { getRouter } = require('./Routes/Get.Route');
@@ -5,11 +6,12 @@ const { postRouter } = require('./Routes/Post.Route');
 const { deleteRouter } = require('./Routes/Delete.Route');
 const { updateRouter } = require('./Routes/Update.Route');
 const cors = require("cors")
-require('dotenv').config()
 const app = express();
+app.use(express.json());
+
 app.use(cors())
 
-app.use(express.json());
+
  app.get("/",(req,res)=>{
     res.send("Todos")
  })
