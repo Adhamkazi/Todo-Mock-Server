@@ -21,12 +21,12 @@ app.use("/todo",deleteRouter)
 app.use("/todo",updateRouter)
 
 
-app.listen(process.env.PORT,async()=>{
+app.listen(8080,async()=>{
 try {
     await connection
     console.log("Connected to Db");
 } catch (error) {
     console.log({"Erros":error.message})
 }
-console.log(`Server is runing on ${process.env.PORT}`)
+console.log(`Server is runing on 8080`)
 })
