@@ -1,8 +1,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
-console.log(process.env.mongoURL)
 
-const connection = mongoose.connect(process.env.mongoURL);
+
+const connection = mongoose.connect('mongodb+srv://adham:adham@cluster0.iq2zpvd.mongodb.net/merntodo?retryWrites=true&w=majority');
 connection.then(() => {
     console.log("Connected to the MongoDB database");
 }).catch((error) => {
